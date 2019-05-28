@@ -6,7 +6,7 @@
 
 int N_res;
 int visited[10], res[10];
-int A[10][10], max[1], sum[1];
+int A[10][10], max[1], sum[1], big[10];
 
 //----------------------------------------------------------
 void go(int curr, int b, int n)
@@ -15,32 +15,29 @@ void go(int curr, int b, int n)
 
     if (curr == b) {
         for (i = 0; i < N_res; i++) {
-            printf("%d-", res[i] + 1);
-
-            // if (res[i] == a)
-            // continue;
-            if (((i + 2) % 2) == 0) {
+            //    printf("%d-", res[i] + 1);
+            if (((i + 2) % 2) == 0)
                 k += A[res[i - 1]][res[i]];
-                // cout « "\t" « k « " " « A[res[i - 1]][res[i]] « "\t";
-            } else {
+            else
                 k += A[res[i]][res[i - 1]];
-                // cout « "\t" « k « " " « A[res[i]][res[i - 1]] « "\t";
-            }
         }
 
-        printf("%d\n", b + 1);
+        //    printf("%d\n", b + 1);
+
         if (N_res % 2 == 0)
             k += A[b][res[N_res - 1]];
         else
             k += A[res[N_res - 1]][b];
 
         if (k > max[0]) {
-            printf("\nCurrent max path is: ");
             max[0] = k;
+            //    printf("\nCurrent max path is: ");
             for (i = 0; i < N_res; i++) {
-                printf("%d-", res[i] + 1);
+                //        big[i] = res[i];
+                //        printf("%d-", res[i] + 1);
             }
-            printf("%d\n\n", b + 1);
+            //    printf("%d\n\n", b + 1);
+            //    big[b] = b;
         }
 
         sum[0] += 1;
@@ -63,13 +60,14 @@ void go(int curr, int b, int n)
 
 void input_city(int* n)
 {
-    printf("Input number of cities (1 - 10)\n");
+    printf("\n\n\n\n\t\t\tInput number of cities (1 - 10)\n\n\t\t\t\t\t");
     scanf(" %d", n);
 }
+//-----------------------------------------------------
 
 void input_ab(int* a, int* b)
 {
-    printf("\nInput 2 vertices:\n");
+    printf("\n\n\t\t\t\tInput 2 vertices:\n\n\t\t\t\t\t");
     scanf(" %d", a);
     scanf(" %d", b);
 }
