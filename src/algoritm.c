@@ -125,6 +125,7 @@ int Deikstr(int n, int a, int b)
         minMas[i] = 10000; //Инициализация вершин и расстояний
         verMas[i] = 1;
     }
+
     minMas[0] = 0;
     do {
         minindex = 10000;
@@ -138,7 +139,7 @@ int Deikstr(int n, int a, int b)
         if (minindex != 10000) {
             for (int i = 0; i < n; i++) {
                 if (A[minindex][i] > 0) {
-                    tmp = min + A[minindex][i]; //Минимальный найденный вес
+                    tmp = min + A[minindex][i];
                     if (tmp < minMas[i]) { //
                         minMas[i] = tmp; // Сравниваем с минимальным весом
                                          // вершины
@@ -153,7 +154,6 @@ int Deikstr(int n, int a, int b)
     while (con != 0) { // Восстановление пути
         int vertex[n]; // Массив посещенных вершин
         int endPoint;  // Индекс конечной вершины
-
         con = b;
         endPoint -= 1;
         int vend = minMas[endPoint + 1]; // vend-Для проверки на не
