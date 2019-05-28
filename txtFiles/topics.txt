@@ -1,9 +1,11 @@
 
-                                Choose the option
+                             Choose the option
+
+			     1) Make a graph
+
+                             2) Random graph
 
 
-				1) Make a graph
 
-                                2) Random graph
 
-                                3) Previous page
+                             3) Previous page
