@@ -102,3 +102,36 @@ void print_graph(int n)
         }
     }
 }
+
+void start_window()
+{
+    printf("\n\t\t\t   Welcome to the Graphs!\n");
+    printf("\n");
+    printf("\t\t\t    1)       Start\n");
+    printf("\t\t\t    2)       Info\n\n\n\n");
+    printf("\t\t\t    3)       Exit\n\n");
+}
+
+void info()
+{
+    printf("\n\t\t\t\t  Info\n");
+    printf("\n");
+    printf("\t    Graph is a diagram showing the relation between\n");
+    printf("\t    variable quantities, typically of two variables,\n");
+    printf("\t each measured along one of a pair of axes at right angles.\n\n");
+    printf("\t    This program is designed to solve problems on graphs:\n");
+    printf("\t the shortest path between two vertices, the number of "
+           "different\n");
+    printf("\troutes between two vertices, the longest path between two "
+           "vertices\n\n\n");
+    printf("\t\t   1) Previous page\t\t 2) Exit\n\n");
+}
+
+void options()
+{
+    printf("\n\t\t\t   Choose the option!\n");
+    printf("\n");
+    printf("\t\t\t    1) Make a graph\n");
+    printf("\t\t\t    2) Random graph\n\n\n\n");
+    printf("\t\t\t    3) Previous page\n\n");
+}

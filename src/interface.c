@@ -10,7 +10,7 @@ int A[10][10], max[1] = {0}, sum[1] = {0}, big[10];
 void Welcome_window()
 {
     clear();
-    File_input("../txtFiles/welcome.txt");
+    start_window();
     while (1) {
         Input();
         break;
@@ -21,7 +21,7 @@ void Input()
 {
     char l;
     clear();
-    File_input("../txtFiles/welcome.txt");
+    start_window();
     while ((l != '1') && (l != '2') && (l != '3')) {
         scanf(" %c", &l);
         switch (l) {
@@ -44,7 +44,7 @@ void Info()
 {
     char l;
     clear();
-    File_input("../txtFiles/info.txt");
+    info();
     while ((l != '1') && (l != '2')) {
         scanf(" %c", &l);
         switch (l) {
@@ -64,7 +64,7 @@ void IloveTomatos()
     char l;
     srand(0);
     clear();
-    File_input("../txtFiles/topics.txt");
+    options();
     while ((l != '1') && (l != '2') && (l != '3')) {
         scanf(" %c", &l);
         switch (l) {
