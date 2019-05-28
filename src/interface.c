@@ -5,7 +5,7 @@
 #include "stdlib.h"
 
 int N_res;
-int A[10][10], max[1] = {0}, sum[1] = {0}, big[10];
+int A[10][10], max[1] = {0}, sum[1] = {0}, big[10], min[1] = {10000}, lil[10];
 
 void Welcome_window()
 {
@@ -62,7 +62,6 @@ void Info()
 void IloveTomatos()
 {
     char l;
-    srand(0);
     clear();
     options();
     while ((l != '1') && (l != '2') && (l != '3')) {
@@ -89,8 +88,8 @@ void handgraph()
 {
     clear();
 
-    int i = 0, j = 0, n = 0;
-    int a, b, g = 0;
+    int i = 0, j = 0, n = 0, g = 0;
+    int a, b;
     char c;
 
     do {
@@ -133,7 +132,19 @@ void handgraph()
     go(a - 1, b - 1, n);
 
     printf("\n\t\t\tAmount of ways: %d\n\n", sum[0]);
-    printf("\t\t\tLongest way: %d\n", max[0]);
+    printf("\t\t\tLongest way: %d  ", max[0] - A[0][a - 1]);
+    printf("|");
+    for (int i = 0; i < 10; i++)
+        if (big[i] != 0)
+            printf("%d-", big[i]);
+    printf("%d", b);
+    printf("|\n\t\t\tShortest way: %d  |", min[0] - A[0][a - 1]);
+
+    for (int i = 0; i < 10; i++)
+        if (lil[i] != 0)
+            printf("%d-", lil[i]);
+    printf("%d", b);
+    printf("|");
 
     //    Deikstr(n, a, b);
 
@@ -151,7 +162,7 @@ void handgraph()
 void randgraph()
 {
     clear();
-
+    srand(0);
     int i = 0, j = 0, n = 0;
     int a, b;
     char c;
@@ -182,7 +193,20 @@ void randgraph()
     go(a - 1, b - 1, n);
 
     printf("\n\t\t\tAmount of ways: %d\n\n", sum[0]);
-    printf("\t\t\tLongest way: %d\n", max[0]);
+    printf("\t\t\tLongest way: %d  ", max[0] - A[0][a - 1]);
+    printf("|");
+    for (int i = 0; i < 10; i++)
+        if (big[i] != 0)
+            printf("%d-", big[i]);
+    printf("%d", b);
+    printf("|\n\t\t\tShortest way: %d  |", min[0] - A[0][a - 1]);
+
+    for (int i = 0; i < 10; i++)
+        if (lil[i] != 0)
+            printf("%d-", lil[i]);
+    printf("%d", b);
+    printf("|");
+
     /*    for (int i = 0; i < 10; i++)
             printf("%d ", big[i]);*/
 

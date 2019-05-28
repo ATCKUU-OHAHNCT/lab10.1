@@ -6,7 +6,7 @@
 
 int N_res;
 int visited[10], res[10];
-int A[10][10], max[1], sum[1], big[10];
+int A[10][10], max[1], sum[1], big[10], min[1], lil[10];
 
 //----------------------------------------------------------
 void go(int curr, int b, int n)
@@ -16,6 +16,7 @@ void go(int curr, int b, int n)
     if (curr == b) {
         for (i = 0; i < N_res; i++) {
             //    printf("%d-", res[i] + 1);
+
             if (((i + 2) % 2) == 0)
                 k += A[res[i - 1]][res[i]];
             else
@@ -30,14 +31,29 @@ void go(int curr, int b, int n)
             k += A[res[N_res - 1]][b];
 
         if (k > max[0]) {
+            for (i = 0; i < 10; i++)
+                big[i] = 0;
+
             max[0] = k;
             //    printf("\nCurrent max path is: ");
             for (i = 0; i < N_res; i++) {
-                //        big[i] = res[i];
+                big[i] = res[i] + 1;
                 //        printf("%d-", res[i] + 1);
             }
             //    printf("%d\n\n", b + 1);
-            //    big[b] = b;
+        }
+
+        if (k < min[0]) {
+            for (i = 0; i < 10; i++)
+                lil[i] = 0;
+
+            min[0] = k;
+            //    printf("\nCurrent max path is: ");
+            for (i = 0; i < N_res; i++) {
+                lil[i] = res[i] + 1;
+                //        printf("%d-", res[i] + 1);
+            }
+            //    printf("%d\n\n", b + 1);
         }
 
         sum[0] += 1;
