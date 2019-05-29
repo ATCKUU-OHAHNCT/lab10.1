@@ -1,4 +1,5 @@
 #include "algoritm.h"
+#include "check.h"
 #include "interface.h"
 #include "print_graph.h"
 #include "stdio.h"
@@ -15,15 +16,10 @@ void go(int curr, int b, int n)
 
     if (curr == b) {
         for (i = 0; i < N_res; i++) {
-            //    printf("%d-", res[i] + 1);
-
-            if (((i + 2) % 2) == 0)
-                k += A[res[i - 1]][res[i]];
-            else
-                k += A[res[i]][res[i - 1]];
+            printf("%d-", res[i] + 1);
         }
 
-        //    printf("%d\n", b + 1);
+        printf("%d\n", b + 1);
 
         if (N_res % 2 == 0)
             k += A[b][res[N_res - 1]];
@@ -94,41 +90,7 @@ void clear()
     printf("\033[2J");
     printf("\033[0;0f");
 }
-//----------------------------------------------------------
-
-int check_city(int n)
-{
-    if ((n < 2) || (n > 10))
-        return 0;
-
-    return 1;
-}
-//----------------------------------------------------------
-
-int check_paths(int n)
-{
-    for (int i = 0; i < n; i++) {
-        if (A[i][i] != 0)
-            return 0;
-
-        for (int j = 0; j < n; j++) {
-            if ((A[i][j] != A[j][i]) || (A[i][j] < 0))
-                return 0;
-        }
-    }
-
-    return 1;
-}
-//----------------------------------------------------------
-
-int check_ab(int a, int b, int n)
-{
-    if ((a < 1) || (a > n) || (b < 1) || (b > n) || (a == b))
-        return 0;
-
-    return 1;
-}
-//----------------------------------------------------------
+//-----------------------------------------------------------
 
 int Deikstr(int n, int a, int b)
 {

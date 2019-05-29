@@ -1,5 +1,6 @@
 #include "interface.h"
 #include "algoritm.h"
+#include "check.h"
 #include "print_graph.h"
 #include "stdio.h"
 #include "stdlib.h"
